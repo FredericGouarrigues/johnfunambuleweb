@@ -5,8 +5,8 @@
  * @author FG
  */
 
-const port = 3000;
-const hostname = "192.168.8.97";
+const port = 8080;
+const hostname = "https://pu6jpisqyn.us-east-1.awsapprunner.com";
 
 let currentRoom = "Lobby";
 

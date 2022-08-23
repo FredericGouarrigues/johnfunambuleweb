@@ -7,7 +7,7 @@
 const socketio = require("socket.io");
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 8080;
 
 //fichiers statiques
 app.use(express.static("./public"));
@@ -91,11 +91,11 @@ io.on("connection", (socket) => {
   socket.on("gameEnded", (data) => {
     switch (data) {
       case "win":
-        socket.to(io.currentRoom).emit("onWin", data);  
+        socket.to(io.currentRoom).emit("onWin", data);
         break;
       case "lose":
         socket.to(io.currentRoom).emit("onWin", data);
-        break;    
+        break;
     }
   });
 });
