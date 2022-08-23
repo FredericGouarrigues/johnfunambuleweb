@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgb(9, 81, 122), rgb(27, 30, 73));
+  position: relative;
+  font-family: "Titan One";
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: white;
+  margin: 0px;
+  text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+/* Lobby */
+.lobby-container {
+  width: 50%;
+}
+.connection-container {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.connection-title {
+  color: #fff;
+  font-size: 3em;
+}
+.connection-field {
+  width: 50%;
+  margin: 30px auto;
+  font-size: 2.6em;
+  border: none;
+  border-radius: 5px;
+  font-family: "Titan One", cursive;
+  color: rgb(27, 30, 73);
+  text-align: center;
+  line-height: 1.4em;
+}
+.connection-field:focus {
+  outline: none;
+}
+.connection-btn {
+  padding: 16px 30px;
+  border-radius: 10px;
+  background-color: rgb(71, 113, 204);
+  color: #fff;
+  width: fit-content;
+  margin: 20px auto;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+/* Erreurs */
+.alert-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000044;
+}
+
+.alert-container {
+  padding: 100px 60px;
+  background: linear-gradient(rgb(9, 81, 122), rgb(27, 30, 73));
+  width: 50%;
+  border-radius: 10px;
+  font-family: "Titan One", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #fff;
+}
+
+.alert-title {
+  font-size: 4em;
+}
+
+.alert-texte {
+  font-size: 1.4em;
+}
+
+.alert-btn {
+  padding: 16px 30px;
+  border-radius: 10px;
+  background-color: rgb(71, 113, 204);
+  color: #fff;
+  width: fit-content;
+  margin: 40px auto;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+/* Attaques */
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+.game-title {
+  text-align: center;
+  margin: 40px;
+}
+.game-infos {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.attaque-container {
+  flex-basis: 21%;
+  margin: 20px 0;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-size background-color 400ms ease;
+}
+.attaque-container:hover {
+  background-size: 45%;
+  background-color: rgb(192, 226, 247);
+}
+
+.attaque-name {
+  font-family: "Titan One", cursive;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Cooldown */
+.attaque-container {
+  background-color: #fff;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  transition-duration: 0.4s;
+  padding: 30px;
+}
+
+.attaque-container:hover {
+  cursor: pointer;
+}
+
+.disabled {
+  filter: grayscale(100%);
+  pointer-events: none;
+  transition-duration: 0.4s;
+}
+
+.hidden {
+  display: none;
+  transition-duration: 0.4s;
+}
+
+.base-timer-circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer-path-elapsed {
+  stroke-width: 10px;
+  stroke: grey;
+}
+
+.base-timer-path-remaining {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  stroke: currentColor;
+}
+
+.base-timer-svg {
+  transform: scale(-0.8, 0.8);
+}
+
+.locked::after {
+  content: url("../img/lock.png");
+  transform: scale(0.4);
+}
+
+.locked {
+  filter: contrast(0.5);
+  pointer-events: none;
+}
+
+/* Loading */
+
+.loading-elems {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.fluid {
+  width: 100%;
+  height: auto;
+}
+
+.loading-elem-0 {
+  width: 50px;
+  margin: 50px 30px;
+  transform: translate(0, 5%);
+  animation: jump 3000ms cubic-bezier(0.85, 0, 0, 0.85) infinite;
+  animation-delay: 0ms;
+}
+.loading-elem-1 {
+  width: 50px;
+  margin: 50px 30px;
+  transform: translate(0, 5%);
+  animation: jump 3000ms cubic-bezier(0.85, 0, 0, 0.85) infinite;
+  animation-delay: 2000ms;
+}
+.loading-elem-2 {
+  width: 50px;
+  margin: 50px 30px;
+  transform: translate(0, 5%);
+  animation: jump 3000ms cubic-bezier(0.85, 0, 0, 0.85) infinite;
+  animation-delay: 1000ms;
+}
+
+.loading-text {
+  font-size: 1.7em;
+  display: flex;
+}
+
+.loading-text > span {
+  transform: translate(0, 5%);
+  animation: jump 400ms ease-in-out;
+  display: block;
+  white-space: pre;
+}
+
+@keyframes jump {
+  50% {
+    transform: translate(0, -5%);
+  }
+}
