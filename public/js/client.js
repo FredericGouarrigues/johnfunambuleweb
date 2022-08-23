@@ -12,7 +12,7 @@ let currentRoom = "Lobby";
 
 let wrapper = document.querySelector("#container");
 
-const client = io(`ws://${hostname}:${port}`);
+const client = io(`/`);
 
 //attendre la connection
 client.on("connect", () => {
